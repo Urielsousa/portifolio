@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-6 pt-20"
+     className="min-h-[calc(100vh-80px)] flex items-center justify-center px-6 pt-20 relative"
     >
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         {/* TEXTO */}
