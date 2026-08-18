@@ -1,8 +1,7 @@
-import Navbar from "./componets/Navbar";
-import Hero from "./componets/Hero";
-import About from "./componets/About";
-
-import { FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
 
 function App() {
   return (
@@ -10,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Skills />
     </div>
   );
 }

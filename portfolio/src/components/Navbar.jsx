@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0f0f0f]/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#home" className="text-2xl font-bold text-white">
-          Uriel<span className="text-green-500">.</span>
+          Uriel Sousa<span className="text-green-500">.</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
