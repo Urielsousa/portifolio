@@ -1,64 +1,46 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0f0f0f]/80 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-bold text-white">
-          Uriel Sousa<span className="text-green-500">.</span>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <a href="#home" className="logo">
+          Uriel<span>.</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          <a
-            href="#home"
-            className="text-gray-300 hover:text-green-500 transition"
-          >
+        <div className="nav-links">
+          <a href="#home" className="nav-link">
             Início
           </a>
 
-          <a
-            href="#sobre"
-            className="text-gray-300 hover:text-green-500 transition"
-          >
+          <a href="#sobre" className="nav-link">
             Sobre
           </a>
 
-          <a
-            href="#skills"
-            className="text-gray-300 hover:text-green-500 transition"
-          >
+          <a href="#skills" className="nav-link">
             Skills
           </a>
 
-          <a
-            href="#projetos"
-            className="text-gray-300 hover:text-green-500 transition"
-          >
+          <a href="#projetos" className="nav-link">
             Projetos
           </a>
 
-          <a
-            href="#contato"
-            className="text-gray-300 hover:text-green-500 transition"
-          >
+          <a href="#contato" className="nav-link">
             Contato
           </a>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="nav-actions">
           <a
             href="https://github.com/Urielsousa"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-300 hover:text-white transition text-xl"
+            className="github-link"
           >
             <FaGithub />
           </a>
 
-          <a
-            href="#contato"
-            className="hidden sm:block bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-medium transition"
-          >
+          <a href="#contato" className="nav-button">
             Vamos conversar
           </a>
         </div>
