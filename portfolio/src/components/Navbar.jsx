@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <a href="#home" className="logo">
-          Uriel<span>.</span>
+          Uriel Vieira<span>.</span>
         </a>
 
         <div className="nav-links">

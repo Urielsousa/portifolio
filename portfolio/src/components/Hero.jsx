@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaArrowDown } from "react-icons/fa";
+import perfil from "../assets/perfil.png";
 
 export default function Hero() {
   return (
@@ -8,13 +9,13 @@ export default function Hero() {
         <motion.div
           className="hero-content"
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0.5 }}
           transition={{ duration: 0.8 }}
         >
           <p className="hero-label">Olá, eu sou</p>
 
           <h1 className="hero-title">
-            Uriel
+            Uriel Vieira
             <br />
             <span>Desenvolvedor</span>
             <br />
@@ -61,11 +62,13 @@ export default function Hero() {
         <motion.div
           className="hero-visual"
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 0.4 }}
           transition={{ duration: 0.8 }}
         >
           <div className="avatar-container">
-            <div className="avatar">👨‍💻</div>
+            <div className="avatar">
+              <img src={perfil} alt="Uriel Sousa" className="avatar-image" />
+            </div>
           </div>
         </motion.div>
       </div>
