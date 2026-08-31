@@ -3,11 +3,11 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
-    title: "To Do Smart",
+    title: "Cadastro de Usuarios",
     description:
-      "Aplicação de gerenciamento de tarefas desenvolvida com React, com foco em organização, produtividade e integração futura com Google Agenda e WhatsApp.",
-    technologies: ["React", "JavaScript", "Tailwind CSS"],
-    github: "#",
+      "Uma aplicação web de cadastro de usuários",
+    technologies: ["React", "JavaScript", "Vite", "CSS"],
+    github: "https://github.com/Urielsousa/cadastro-devclub-usuarios",
     demo: "#",
   },
   {
@@ -15,7 +15,7 @@ const projects = [
     description:
       "Sistema web desenvolvido com Laravel para gerenciamento de usuários, autenticação, cadastro, edição e exclusão de registros.",
     technologies: ["PHP", "Laravel", "MySQL", "Blade"],
-    github: "#",
+    github: "https://github.com/Urielsousa/rodobank-system",
     demo: "#",
   },
   {

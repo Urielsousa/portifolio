@@ -24,10 +24,6 @@ export default function Navbar() {
           <a href="#projetos" className="nav-link">
             Projetos
           </a>
-
-          <a href="#contato" className="nav-link">
-            Contato
-          </a>
         </div>
 
         <div className="nav-actions">
@@ -40,7 +36,12 @@ export default function Navbar() {
             <FaGithub />
           </a>
 
-          <a href="#contato" className="nav-button">
+          <a
+            href="https://wa.me/5585996499335"
+            target="_blank"
+            rel="noreferrer"
+            className="nav-button"
+          >
             Vamos conversar
           </a>
         </div>

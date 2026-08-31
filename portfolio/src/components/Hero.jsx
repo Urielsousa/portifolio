@@ -33,7 +33,12 @@ export default function Hero() {
               Ver meus projetos
             </a>
 
-            <a href="#contato" className="button-secondary">
+            <a
+              href="https://wa.me/5585996499335"
+              target="_blank"
+              rel="noreferrer"
+              className="button-secondary"
+            >
               Entre em contato
             </a>
           </div>
