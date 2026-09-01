@@ -1,5 +1,16 @@
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaPhp,
+  FaLaravel,
+  FaGitAlt,
+  FaGithub,
+} from "react-icons/fa";
+import { SiTailwindcss, SiMysql, SiVite } from "react-icons/si";
 
 const skills = [
   {
@@ -24,6 +35,47 @@ const skills = [
     name: "React",
     icon: <FaReact />,
     category: "Front-End",
+  },
+
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss />,
+    category: "Front-End",
+  },
+  {
+    name: "Node.js",
+    icon: <FaNodeJs />,
+    category: "Back-End",
+  },
+  {
+    name: "PHP",
+    icon: <FaPhp />,
+    category: "Back-End",
+  },
+  {
+    name: "Laravel",
+    icon: <FaLaravel />,
+    category: "Back-End",
+  },
+  {
+    name: "MySQL",
+    icon: <SiMysql />,
+    category: "Banco de Dados",
+  },
+  {
+    name: "Git",
+    icon: <FaGitAlt />,
+    category: "Ferramentas",
+  },
+  {
+    name: "GitHub",
+    icon: <FaGithub />,
+    category: "Ferramentas",
+  },
+  {
+    name: "Vite",
+    icon: <SiVite />,
+    category: "Ferramentas",
   },
 ];
 
