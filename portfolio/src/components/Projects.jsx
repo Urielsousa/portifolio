@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "./Projects.css";
+import "./projects.css";
 import {
   FaGithub,
   FaExternalLinkAlt,
