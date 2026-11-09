@@ -1,0 +1,441 @@
+/* =====================================
+   UV.EXE — SKILLS SYSTEM
+   CYBERPUNK / NIGHT CITY INTERFACE
+===================================== */
+
+.skills {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  background: #0b0b0e;
+  isolation: isolate;
+}
+
+.skills::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(#00f0ff08 1px, transparent 1px),
+    linear-gradient(90deg, #00f0ff08 1px, transparent 1px);
+  background-size: 45px 45px;
+  mask-image: linear-gradient(to bottom, transparent, black, transparent);
+}
+
+.skills-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+/* =====================================
+   SECTION HEADER
+===================================== */
+
+.section-header {
+  margin-bottom: 45px;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #ff00a8;
+  font-family: monospace;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.section-title {
+  color: #fff;
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.section-title span {
+  color: #00f0ff;
+  text-shadow: 0 0 15px #00f0ff88;
+}
+
+.section-description {
+  max-width: 650px;
+  margin-top: 15px;
+  color: #9999a5;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.section-line {
+  width: 100%;
+  height: 1px;
+  margin-top: 30px;
+  background: linear-gradient(90deg, #00f0ff, #ff00a8, transparent);
+}
+
+/* =====================================
+   SYSTEM STATUS
+===================================== */
+
+.skills-system-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 15px 0;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #00f0ff33;
+}
+
+.skills-status-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.skills-pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #00ff88;
+  box-shadow: 0 0 12px #00ff88;
+  animation: pulse 1.5s infinite;
+}
+
+.skills-counter {
+  color: #9999a5;
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* =====================================
+   SKILLS GROUPS
+===================================== */
+
+.skills-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.skills-group {
+  width: 100%;
+}
+
+.skills-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #00f0ff33;
+}
+
+.skills-group-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #00f0ff;
+}
+
+.skills-group-title > span {
+  display: flex;
+  font-size: 20px;
+  filter: drop-shadow(0 0 7px #00f0ff);
+}
+
+.skills-group-title h3 {
+  color: #f5f5ff;
+  font-family: monospace;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+
+.skills-group-code {
+  color: #ff00a8;
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* =====================================
+   SKILLS GRID
+===================================== */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* =====================================
+   SKILL CARD
+===================================== */
+
+.skill-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 165px;
+  padding: 22px 15px;
+  overflow: hidden;
+
+  background: linear-gradient(145deg, #17171d, #101014);
+
+  border: 1px solid #ffffff16;
+  border-radius: 15px;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Efeito luminoso interno */
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  background: radial-gradient(circle at center, #00f0ff15, transparent 70%);
+
+  transition: opacity 0.3s ease;
+}
+
+/* Linha neon inferior */
+
+.skill-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00f0ff, #ff00a8);
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+.skill-card:hover {
+  border-color: #00f0ff88;
+  background: #171a20;
+  box-shadow:
+    0 0 15px #00f0ff18,
+    inset 0 0 15px #00f0ff08;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card:hover::after {
+  width: 80%;
+}
+
+/* =====================================
+   CARD HEADER
+===================================== */
+
+.skill-card-top {
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.skill-code {
+  color: #b7b7c2;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.skill-indicator {
+  color: #00ff88;
+  font-size: 9px;
+  text-shadow: 0 0 8px #00ff88;
+}
+
+/* =====================================
+   TECHNOLOGY ICONS
+===================================== */
+
+.skill-icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 13px 0 15px;
+
+  color: #aeb4c2;
+  font-size: 38px;
+
+  transition:
+    color 0.3s ease,
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  color: #00f0ff;
+  filter: drop-shadow(0 0 10px #00f0ff99);
+  transform: scale(1.15);
+}
+
+/* =====================================
+   CARD INFORMATION
+===================================== */
+
+.skill-info {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.skill-name {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.skill-loaded {
+  display: inline-block;
+  margin-top: 9px;
+  color: #00f0ff;
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.skill-card-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #ff00a8;
+  transition: width 0.4s ease;
+}
+
+.skill-card:hover .skill-card-line {
+  width: 100%;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.skills-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 55px;
+  padding-top: 20px;
+  border-top: 1px solid #00f0ff33;
+
+  color: #777784;
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 12px #00ff88;
+  }
+
+  50% {
+    opacity: 0.4;
+    box-shadow: 0 0 3px #00ff88;
+  }
+}
+
+/* =====================================
+   RESPONSIVENESS
+===================================== */
+
+@media (max-width: 1000px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .skills {
+    padding: 75px 0;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .skills-group-title h3 {
+    font-size: 11px;
+  }
+
+  .skills-group-code {
+    font-size: 8px;
+  }
+
+  .skill-card {
+    min-height: 150px;
+  }
+
+  .section-description {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-system-status {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .skills-footer {
+    flex-direction: column;
+  }
+}
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .skills *,
+  .skills *::before,
+  .skills *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

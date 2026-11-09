@@ -1,37 +1,52 @@
 import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
+import "./Navbar.css";
 
 export default function Navbar() {
+  const links = [
+    { name: "INÍCIO", href: "#home" },
+    { name: "SOBRE", href: "#sobre" },
+    { name: "SKILLS", href: "#skills" },
+    { name: "PROJETOS", href: "#projetos" },
+  ];
+
   return (
-    <nav className="navbar">
+    <motion.nav
+      className="navbar"
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+    >
       <div className="navbar-container">
+        {/* LOGO */}
         <a href="#home" className="logo">
-          Uriel Vieira<span>.</span>
+          <span className="logo-symbol">UV</span>
+          <span className="logo-extension">.exe</span>
         </a>
 
+        {/* NAVEGAÇÃO */}
         <div className="nav-links">
-          <a href="#home" className="nav-link">
-            Início
-          </a>
-
-          <a href="#sobre" className="nav-link">
-            Sobre
-          </a>
-
-          <a href="#skills" className="nav-link">
-            Skills
-          </a>
-
-          <a href="#projetos" className="nav-link">
-            Projetos
-          </a>
+          {links.map((link, index) => (
+            <a key={link.name} href={link.href} className="nav-link">
+              <span className="nav-number">0{index + 1}</span>
+              {link.name}
+            </a>
+          ))}
         </div>
 
+        {/* AÇÕES */}
         <div className="nav-actions">
+          <div className="nav-status">
+            <span className="nav-status-dot"></span>
+            <span>SYSTEM ONLINE</span>
+          </div>
+
           <a
             href="https://github.com/Urielsousa"
             target="_blank"
             rel="noreferrer"
             className="github-link"
+            aria-label="GitHub"
           >
             <FaGithub />
           </a>
@@ -42,10 +57,13 @@ export default function Navbar() {
             rel="noreferrer"
             className="nav-button"
           >
-            Vamos conversar
+            <span>LET'S TALK</span>
+            <span className="nav-arrow">↗</span>
           </a>
         </div>
       </div>
-    </nav>
+
+      <div className="navbar-bottom-line"></div>
+    </motion.nav>
   );
 }

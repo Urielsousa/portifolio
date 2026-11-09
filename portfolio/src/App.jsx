@@ -6,13 +6,16 @@ import Projectes from "./components/Projects";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white">
+    <main className="portfolio">
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projectes />
-    </div>
+
+      <div className="portfolio-content">
+        <Hero />
+        <About />
+        <Skills />
+        <Projectes />
+      </div>
+    </main>
   );
 }
 
